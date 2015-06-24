@@ -1,127 +1,137 @@
 $(document).ready(function(){
-
-	function cargarHome(event){
+	$(".home").on("click",function(event){
+		event.preventDefault();
 		$.ajax({
-			method:'GET',
-			url:'home.html',
-			dataType:'HTML',
+			type: "GET",
+			dataType: "html",
+			url: "home.html",
 			success: function(data){
 				$("#contenido").html(data);
 			},
-			error: function(data){
-				$("#contenido").html('Error imposible cargar');
+			error: function(){
+				alert("error");
 			}
-		});
-	}
+		})
+	})
+});
 
-  function cargarClasificacion(event){
+$(document).ready(function(){
+	$("#clasificacion").on("click",function(event){
+		event.preventDefault();
 		$.ajax({
-			method:'GET',
-			url:'caricaturas.html',
-			dataType:'HTML',
+			type: "GET",
+			dataType: "html",
+			url: "clasificacion.html",
 			success: function(data){
 				$("#contenido").html(data);
 			},
-			error: function(data){
-				$("#contenido").html('Error imposible cargar');
+			error: function(){
+				alert("error");
 			}
-		});
-	}
+		})
+	})
+});
 
-  function cargarCantitos(event){
-    $.ajax({
-      method:'GET',
-      url:'cantitos.html',
-      dataType:'HTML',
-      success: function(data){
-        $("#contenido").html(data);
-      },
-      error: function(data){
-        $("#contenido").html('Error imposible cargar');
-      }
-    });
-  }
+$(document).ready(function(){
+	$("#cantitos").on("click",function(event){
+		event.preventDefault();
+		$.ajax({
+			type: "GET",
+			dataType: "html",
+			url: "cantitos.html",
+			success: function(data){
+				$("#contenido").html(data);
+			},
+			error: function(){
+				alert("error");
+			}
+		})
+	})
+});
 
-  function cargarCaricaturas(event){
-    $.ajax({
-      method:'GET',
-      url:'caricaturas.html',
-      dataType:'HTML',
-      success: function(data){
-        $("#contenido").html(data);
-      },
-      error: function(data){
-        $("#contenido").html('Error imposible cargar');
-      }
-    });
-  }
+$(document).ready(function(){
+	$("#caricaturas").on("click",function(event){
+		event.preventDefault();
+		$.ajax({
+			type: "GET",
+			dataType: "html",
+			url: "caricaturas.html",
+			success: function(data){
+				$("#contenido").html(data);
+			},
+			error: function(){
+				alert("error");
+			}
+		})
+	})
+});
 
-  function cargarOtras(event){
-    $.ajax({
-      method:'GET',
-      url:'otras.html',
-      dataType:'HTML',
-      success: function(data){
-        $("#contenido").html(data);
-      },
-      error: function(data){
-        $("#contenido").html('Error imposible cargar');
-      }
-    });
-  }
+$(document).ready(function(){
+	$("#otras").on("click",function(event){
+		event.preventDefault();
+		$.ajax({
+			type: "GET",
+			dataType: "html",
+			url: "otras.html",
+			success: function(data){
+				$("#contenido").html(data);
+			},
+			error: function(){
+				alert("error");
+			}
+		})
+	})
+});
 
-  function cargarTorneo2015(event){
-    $.ajax({
-      method:'GET',
-      url:'torneo2015.html',
-      dataType:'HTML',
-      success: function(data){
-        $("#contenido").html(data);
-      },
-      error: function(data){
-        $("#contenido").html('Error imposible cargar');
-      }
-    });
-  }
-
-  function cargarVestimenta(event){
-    $.ajax({
-      method:'GET',
-      url:'vestimenta.html',
-      dataType:'HTML',
-      success: function(data){
-        $("#contenido").html(data);
-      },
-      error: function(data){
-        $("#contenido").html('Error imposible cargar');
-      }
-    });
-  }
-
-  function cargarContacto(event){
-    $.ajax({
-      method:'GET',
-      url:'contacto.html',
-      dataType:'HTML',
-      success: function(data){
-        $("#contenido").html(data);
-      },
-      error: function(data){
-        $("#contenido").html('Error imposible cargar');
-      }
-    });
-  }
+$(document).ready(function(){
+	$("#torneo2015").on("click",function(event){
+		event.preventDefault();
+		$.ajax({
+			type: "GET",
+			dataType: "html",
+			url: "torneo2015.html",
+			success: function(data){
+				$("#contenido").html(data);
+			},
+			error: function(){
+				alert("error");
+			}
+		})
+	})
+});
 
 
+$(document).ready(function(){
+	$("#vestimenta").on("click",function(event){
+		event.preventDefault();
+		$.ajax({
+			type: "GET",
+			dataType: "html",
+			url: "vestimenta.html",
+			success: function(data){
+				$("#contenido").html(data);
+			},
+			error: function(){
+				alert("error");
+			}
+		})
+	})
+});
 
-  cargarHome();
 
-  $(".home").on('click',cargarHome(event));
-  $("#clasificacion").on('click',cargarClasificacion(event));
-  $("#cantitos").on('click',cargarCantitos(event));
-  $("#caricaturas").on('click',cargarCaricaturas(event));
-  $("#otras").on('click',cargarOtras(event));
-  $("#torneo2015").on('click',cargarTorneo2015(event));
-  $("#vestimenta").on('click',cargarVestimenta(event));
-  $("#contacto").on('click',cargarContacto(event));
-})
+$(document).ready(function(){
+	$("#contacto").on("click",function(event){
+	event.preventDefault();
+		$.ajax({
+			type: "GET",
+			dataType: "html",
+			url: "contacto.html",
+			success: function(data){
+				$("#contenido").html(data);
+			},
+			error: function(){
+				alert("error");
+			}
+		})
+	})
+});

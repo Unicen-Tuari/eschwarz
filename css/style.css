@@ -22,6 +22,9 @@ body{
   padding-bottom: 25px;
 }
 
+.campeonato{
+  background-color: rgba(255, 255, 255, 0.6)
+}
 .dibujos{
   background-color: rgba(255, 255, 255, 0.6);
 }
@@ -29,6 +32,23 @@ body{
 .ropa{
   background-color: rgba(255, 255, 255, 0.6)
 }
+
+.canciones{
+  background-color: rgba(255, 255, 255, 0.6)
+}
+
+#usuario{
+  background-color: rgba(0, 0, 0, 0.3)
+}
+
+h1{
+  font-weight: bold;
+}
+
+h2{
+  text-align: center;
+}
+
 h6{
   color: rgb(0, 0, 0)
 }
@@ -43,4 +63,13 @@ footer{
   background-color: rgba(255,255, 255, 0.6);
   color: red;
   margin-top: 25px;
+}
+
+.table tbody tr td{
+  border: 3px solid red;
+}
+
+thead:first-child > tr:first-child > th {
+    border: 3px solid red;
+    border-top: 3px solid red;
 }

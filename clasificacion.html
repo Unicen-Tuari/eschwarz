@@ -1,5 +1,39 @@
-	<div class="row">
-		<div class="col-xs-12 col-md-8 col-md-offset-2">
+<div class="col-xs-12 col-md-8 col-md-offset-2 container campeonato">
+	<section class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+	  <h2>El Torneo de los 30</h2>
+	  <table class="table table-bordered" >
+	    <thead><!--Titulos de la tabla-->
+	      <tr>
+					<th>POSICION</th>
+					<th>EQUIPO</th>
+					<th>PUNTOS</th>
+	      </tr>
+	    </thead>
+	    <tbody id="cuerpotabla"><!--Contenido de la tabla-->
 
-		</div>
-	</div>
+	    </tbody>
+	    <tfoot>
+	      <tr>
+					<td> <input id="posicion" type="number" class="form-control" placeholder="Posicion" required ></td>
+	        <td> <input id="equipo" type="text" class="form-control" placeholder="Equipo" required /></td>
+	        <td> <input id="puntos" type="number" class="form-control" placeholder="PUNTOS" required /></td>
+	      </tr>
+	    </tfoot>
+	  </table>
+	  <button id="agregar" type="submit" class="btn btn-success" >Agregar equipo</button>
+
+	</section>
+	<section class="sabenc col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+	  <form id="usuario">
+			<h2>Registros de personal</h2>
+	    <p>Nombre: </p><input name="name" type="text" required>(*)
+	    <p>Apellido: </p><input name="name" type="text" required>(*)
+	    <p>DNI o n&uacutemero de empleado:</p> <input id="numempleado" name="numempleado" type="number" required>
+	    <p>Direccion: </p><input name="name" type="text" required>(*)
+	    <p>Telefono: </p><input name="name" type="text" required>(*)
+	    <input class="der" type="submit" value="enviar">
+	  </form>
+	</section>
+</div>
+
+<script src="js/tabla.js"></script>
