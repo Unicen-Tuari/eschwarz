@@ -1,14 +1,14 @@
 $('document').ready(function(){
 
 	// Definicion de Variables
-	grupo = 71;
-	function guardarEquipo(grupo){
-			var posicion = $("#posicion").val();
-			$("#posicion").val('');
+	grupo = 71; //creo la variable grupo como variable global
+	function traerEquipos(grupo){
+			var posicion = $("#posicion").val(); //.val recupera el valor que tiene adentro del input
+				$("#posicion").val('');
 		  var equipo = $("#equipo").val();
-			$("#equipo").val('')
+				$("#equipo").val('')
 		  var puntos = $("#puntos").val();
-			$("#puntos").val('');
+				$("#puntos").val('');
 		  var informacion = [posicion, equipo, puntos];
 		  var info = {
 		      "group": grupo,
@@ -23,7 +23,7 @@ $('document').ready(function(){
 		       contentType: "application/json; charset=utf-8",
 		       url: "http://web-unicen.herokuapp.com/api/create",
 					success: function(data){
-							traerTabla(grupo);
+							agregarEquipo(grupo);
 			       },
 			       error:function(data){
 			         alert('No se pudo comunicar con el servidor');
@@ -32,7 +32,7 @@ $('document').ready(function(){
 		  }
 	}
 
-	function traerTabla(grupo){
+	function agregarEquipo(grupo){
 	  $.ajax({
 	     type: "GET",
 	     dataType: 'JSON',
@@ -42,24 +42,24 @@ $('document').ready(function(){
 	        var equipo = "";
 	        var puntos = "";
 					var registro = "";
-					$("#cuerpotabla").html('');
+					$("#contenidoTabla").html('');
 	        for (var i = 1; i < data.information.length; i++) {
 		         posicion = data.information[i]['thing'][0];
 		         equipo = data.information[i]['thing'][1];
 		         puntos = data.information[i]['thing'][2];
 		         registro = "<tr><td>" + posicion + "</td><td>" + equipo + "</td><td>" + puntos + "</td></tr>";
-						$("#cuerpotabla").append(registro);
+						$("#contenidoTabla").append(registro);
 	        }
 
 	     }
 	  });
 	}
 
-		traerTabla(grupo);
+		agregarEquipo(grupo);
 
-		// Llama a la Funcion cargarActividades cuando se Presiona el Boton Correspondiente
+		// Llama a la Funcion traerEquipos cuando se Presiona el Boton Correspondiente
 		$('#agregar').on('click', function(event){
 			event.preventDefault();
-			guardarEquipo(grupo);
+			traerEquipos(grupo);
 		});
 	});
